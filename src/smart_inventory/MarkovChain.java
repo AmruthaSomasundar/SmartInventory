@@ -9,12 +9,12 @@ package smart_inventory;
  *
  * @author MAHE
  */
-public class markov extends javax.swing.JFrame {
+public class MarkovChain extends javax.swing.JFrame {
 
     /**
      * Creates new form markov
      */
-    public markov() {
+    public MarkovChain() {
         initComponents();
     }
 
@@ -89,14 +89,14 @@ public class markov extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Markov_Chains mc=new Markov_Chains();
+        MarkovChainClass mc=new MarkovChainClass();
         mc.start1(Integer.parseInt(jTextField1.getText()));
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        salesexp so= new salesexp();
+        FunctionsOfSalesExpert so= new FunctionsOfSalesExpert();
         so.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -117,14 +117,15 @@ public class markov extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(markov.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MarkovChain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(markov.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MarkovChain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(markov.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MarkovChain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(markov.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MarkovChain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
@@ -132,7 +133,7 @@ public class markov extends javax.swing.JFrame {
             public void run() {
                 
                               
-                new markov().setVisible(true);
+                new MarkovChain().setVisible(true);
             }
         });
     }

@@ -20,13 +20,13 @@ import javax.swing.JOptionPane;
  *
  * @author MAHE
  */
-public class exist_stock extends javax.swing.JFrame {
+public class StockExistsOrNot extends javax.swing.JFrame {
 
     /**
      * Creates new form exist_stock
      */
     String pid;
-    public exist_stock() {
+    public StockExistsOrNot() {
         initComponents();
         fillcombo();
           
@@ -44,7 +44,7 @@ public class exist_stock extends javax.swing.JFrame {
                     count=rs2.getInt("rows");
                     System.out.println(count);
                 } catch (SQLException ex) {
-                    Logger.getLogger(exist_stock.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(StockExistsOrNot.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 
                 
@@ -65,7 +65,7 @@ public class exist_stock extends javax.swing.JFrame {
                      conn.con.close();
                     
                 } catch (SQLException ex) {
-                    Logger.getLogger(exist_stock.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(StockExistsOrNot.class.getName()).log(Level.SEVERE, null, ex);
                 }
                
                 
@@ -81,7 +81,7 @@ public class exist_stock extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox1 = new javax.swing.JComboBox<String>();
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -193,7 +193,7 @@ public class exist_stock extends javax.swing.JFrame {
                     jLabel4.setText(name1);
                     conn1.con.close();
                 } catch (SQLException ex) {
-                    Logger.getLogger(exist_stock.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(StockExistsOrNot.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
@@ -234,7 +234,7 @@ public class exist_stock extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        View_Emp v=new View_Emp();
+        FunctionsOfEmployee v=new FunctionsOfEmployee();
         v.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -255,20 +255,21 @@ public class exist_stock extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(exist_stock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StockExistsOrNot.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(exist_stock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StockExistsOrNot.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(exist_stock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StockExistsOrNot.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(exist_stock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StockExistsOrNot.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new exist_stock().setVisible(true);
+                new StockExistsOrNot().setVisible(true);
               
             }
         });

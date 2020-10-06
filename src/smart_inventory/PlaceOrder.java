@@ -17,12 +17,12 @@ import javax.swing.JOptionPane;
  *
  * @author MAHE
  */
-public class place_order extends javax.swing.JFrame {
+public class PlaceOrder extends javax.swing.JFrame {
 
     /**
      * Creates new form place_order
      */
-    public place_order() {
+    public PlaceOrder() {
         initComponents();
         fillcombo();
     }
@@ -39,7 +39,7 @@ public class place_order extends javax.swing.JFrame {
                     count=rs2.getInt("rows");
                     System.out.println(count);
                 } catch (SQLException ex) {
-                    Logger.getLogger(exist_stock.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(StockExistsOrNot.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 
                 
@@ -67,7 +67,7 @@ public class place_order extends javax.swing.JFrame {
                     count=rs3.getInt("rows");
                     System.out.println(count);
                 } catch (SQLException ex) {
-                    Logger.getLogger(exist_stock.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(StockExistsOrNot.class.getName()).log(Level.SEVERE, null, ex);
                 }
                     
                     String arr2[]=new String[count];
@@ -89,7 +89,7 @@ public class place_order extends javax.swing.JFrame {
                      conn.con.close();
                     
                 } catch (SQLException ex) {
-                    Logger.getLogger(exist_stock.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(StockExistsOrNot.class.getName()).log(Level.SEVERE, null, ex);
                 }
     }
     /**
@@ -108,8 +108,8 @@ public class place_order extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBox1 = new javax.swing.JComboBox<String>();
+        jComboBox2 = new javax.swing.JComboBox<String>();
         jTextField1 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -233,7 +233,7 @@ public class place_order extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        View_Emp ve=new View_Emp();
+        FunctionsOfEmployee ve=new FunctionsOfEmployee();
         ve.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -266,7 +266,7 @@ DB_Connect conn= new DB_Connect();
            pstmt.execute();
            conn.con.close();
            String email="paishreya1412@gmail.com";
-            send_mail se=new send_mail(email, "Smart_Inventory_Order_Bill", "Your order with order number "+oid+" and bill number B1099 has been placed"+"\nThe total amount is "+amount+"\nHappy Shopping:)");
+            SendMail se=new SendMail(email, "Smart_Inventory_Order_Bill", "Your order with order number "+oid+" and bill number B1099 has been placed"+"\nThe total amount is "+amount+"\nHappy Shopping:)");
          
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -302,20 +302,21 @@ DB_Connect conn= new DB_Connect();
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(place_order.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PlaceOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(place_order.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PlaceOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(place_order.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PlaceOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(place_order.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PlaceOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new place_order().setVisible(true);
+                new PlaceOrder().setVisible(true);
             }
         });
     }

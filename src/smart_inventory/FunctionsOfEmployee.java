@@ -9,15 +9,15 @@ package smart_inventory;
  *
  * @author MAHE
  */
-public class View_Emp extends javax.swing.JFrame {
+public class FunctionsOfEmployee extends javax.swing.JFrame {
 
     /**
      * Creates new form View_Emp
      */
-    public View_Emp() {
+    public FunctionsOfEmployee() {
         initComponents();
     }
-     View_Emp(String i) {
+     FunctionsOfEmployee(String i) {
         initComponents();
     }
 
@@ -125,35 +125,35 @@ public class View_Emp extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        update_stock up= new update_stock();
+        UpdateStock up= new UpdateStock();
         up.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        newclientreg nn= new newclientreg();
+        NewClientRegistration nn= new NewClientRegistration();
         nn.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        place_order po=new place_order();
+        PlaceOrder po=new PlaceOrder();
         po.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
          this.dispose();
-        Welcome_page up= new Welcome_page();
+        WelcomePage up= new WelcomePage();
         up.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        CHANGEPASS c = new CHANGEPASS();
+        ChangePassword c = new ChangePassword();
         c.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -174,20 +174,21 @@ public class View_Emp extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(View_Emp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FunctionsOfEmployee.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(View_Emp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FunctionsOfEmployee.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(View_Emp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FunctionsOfEmployee.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(View_Emp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FunctionsOfEmployee.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new View_Emp().setVisible(true);
+                new FunctionsOfEmployee().setVisible(true);
             }
         });
     }

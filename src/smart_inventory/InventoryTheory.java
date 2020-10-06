@@ -11,12 +11,12 @@ import javax.swing.JOptionPane;
  *
  * @author MAHE
  */
-public class invent extends javax.swing.JFrame {
+public class InventoryTheory extends javax.swing.JFrame {
 
     /**
      * Creates new form invent
      */
-    public invent() {
+    public InventoryTheory() {
         initComponents();
     }
 
@@ -148,14 +148,14 @@ public class invent extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        salesexp p=new salesexp();
+        FunctionsOfSalesExpert p=new FunctionsOfSalesExpert();
         p.setVisible(true);
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Inventory_theorystat is=new Inventory_theorystat();
+        InventoryTheoryClass is=new InventoryTheoryClass();
         try {
              is.start1(Double.parseDouble(jTextField1.getText()), Double.parseDouble(jTextField2.getText()), Double.parseDouble(jTextField3.getText()), Double.parseDouble(jTextField4.getText()));
             
@@ -182,20 +182,21 @@ public class invent extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(invent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InventoryTheory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(invent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InventoryTheory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(invent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InventoryTheory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(invent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InventoryTheory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new invent().setVisible(true);
+                new InventoryTheory().setVisible(true);
             }
         });
     }

@@ -13,15 +13,16 @@ import java.sql.DriverManager;
  * @author MAHE
  */
 public class DB_Connect {
+
     public Connection con;
-    public DB_Connect()
-    {
+
+    public DB_Connect() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/smart_inventory","amrutha","2JjnaaNnpq8oSd5s");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smart_inventory", "amrutha", "2JjnaaNnpq8oSd5s");
             System.out.println("connected");
         } catch (Exception e) {
-            System.out.println("Error"+e);
+            System.out.println("Error" + e);
         }
     }
 }

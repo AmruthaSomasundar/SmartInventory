@@ -5,24 +5,22 @@
  */
 package smart_inventory;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import static smart_inventory.EmployeePage.passdb;
+import static smart_inventory.EmployeePage.regdb;
 
 /**
  *
  * @author MAHE
  */
-public class Emp_Page extends javax.swing.JFrame {
+public class SalesExpertLogin extends javax.swing.JFrame {
 
     /**
-     * Creates new form Emp_Page
+     * Creates new form Sales_Page
      */
-    public static String regdb;
-     public static String passdb;
-     
-    public Emp_Page() {
+    public SalesExpertLogin() {
         initComponents();
     }
 
@@ -35,30 +33,29 @@ public class Emp_Page extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jPasswordField1 = new javax.swing.JPasswordField();
-        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Login");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setText("UID");
+
+        jLabel2.setText("Password");
+
+        jTextField1.setText(" ");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jTextField1ActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("UID");
-
-        jLabel2.setText("PASSWORD");
-
-        jButton2.setText("Forgot Password");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("LOGIN");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -69,116 +66,77 @@ public class Emp_Page extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(101, 101, 101)
+                        .addGap(81, 81, 81)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel1))
-                        .addGap(63, 63, 63)
+                        .addGap(56, 56, 56)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)))
+                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                            .addComponent(jPasswordField1)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)))
-                .addContainerGap(162, Short.MAX_VALUE))
+                        .addGap(141, 141, 141)
+                        .addComponent(jButton1)))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(88, 88, 88)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(78, 78, 78)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(158, Short.MAX_VALUE))
+                .addGap(39, 39, 39)
+                .addComponent(jButton1)
+                .addContainerGap(94, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-              String reg=jTextField1.getText();
-      String pass=jPasswordField1.getText();
+        String reg = jTextField1.getText();
+        String pass = jPasswordField1.getText();
         DB_Connect con = new DB_Connect();
-        int flag=0;
+        int flag = 0;
         try {
-            
-        Statement stmt=con.con.createStatement();
-            String sqlq="SELECT ID, PASSWORD FROM employee";
-            ResultSet rs=stmt.executeQuery(sqlq);
-            while(rs.next())
-            {
-                
-                 regdb=rs.getString("ID");
-                 passdb=rs.getString("PASSWORD");
-                 
-                                
-                if(regdb.equals(reg) && (pass.equals(passdb)))
-                {
-                    flag=1;
+
+            Statement stmt = con.con.createStatement();
+            String sqlq = "SELECT ID, PASSWORD FROM sales_expert";
+            ResultSet rs = stmt.executeQuery(sqlq);
+            while (rs.next()) {
+
+                regdb = rs.getString("ID");
+                passdb = rs.getString("PASSWORD");
+
+                if (regdb.equals(reg) && (pass.equals(passdb))) {
+                    flag = 1;
                     this.dispose();
-                    new View_Emp(regdb).setVisible(true);
+                    new FunctionsOfSalesExpert().setVisible(true);
                     break;
                 }
-                
+
             }
-           if(flag==0)
-           {JOptionPane.showMessageDialog(null, "wrong id or password", " ", 1);
-                    jTextField1.setText("");
-                    jPasswordField1.setText("");
-                    rs.beforeFirst();}
-                    
-                   
+            if (flag == 0) {
+                JOptionPane.showMessageDialog(null, "wrong id or password", " ", 1);
+                jTextField1.setText("");
+                jPasswordField1.setText("");
+                rs.beforeFirst();
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-         DB_Connect con = new DB_Connect();
-         String email="paishreya1412@gmail.com";
-         String password="TREE101";
-         String s="EMP1001";
-        int flag=0;
-        try {
-            
-        Statement stmt=con.con.createStatement();
-        s=jTextField1.getText();
-            String sqlq="SELECT Email_Id, PASSWORD FROM employee where ID =?";
-            PreparedStatement pst=con.con.prepareStatement(sqlq);
-            pst.setString(1, s);
-            ResultSet rs=pst.executeQuery(sqlq);
-            while(rs.next())
-            {
-                email=rs.getString("Email_Id");
-                password=rs.getString("PASSWORD");
-                send_mail se=new send_mail(email, "Smart_Inventory_Password_Change", "your username is "+s+"\nThe password is: "+password+"\nHappy surfing:)");
-            }
-            
-            
-        }
-        catch(Exception e)
-        {
-            System.out.println("");
-            //e.printStackTrace();
-        }
-         send_mail se=new send_mail(email, "Smart_Inventory_Password_Change", "your username is "+s+"\nThe password is: "+password+"\nHappy surfing:)");
-        JOptionPane.showMessageDialog(null, "Password has been sent to your registered email", " ", 1);
-        
-        
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,27 +155,27 @@ public class Emp_Page extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Emp_Page.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SalesExpertLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Emp_Page.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SalesExpertLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Emp_Page.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SalesExpertLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Emp_Page.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SalesExpertLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Emp_Page().setVisible(true);
+                new SalesExpertLogin().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPasswordField jPasswordField1;
