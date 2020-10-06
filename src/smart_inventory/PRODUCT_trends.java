@@ -18,20 +18,25 @@ public class PRODUCT_trends {
 static int getrowcount(ResultSet rs1)
     {
         int size=0;
-        try {
+        try 
+        {
             rs1.last();
             size=rs1.getRow();
             rs1.beforeFirst();
             
             
-        } catch (Exception e) {
+        } 
+        catch (Exception e) 
+        {
+            
         }
        
         return size; 
     }    
 public static void start1() {
             
-            try {
+            try 
+            {
                 DB_Connect conn= new DB_Connect();
                 Statement stmt= conn.con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 String sqlq="SELECT YR, sum(NO_SOLD) from production group by(YR)";
@@ -47,23 +52,20 @@ public static void start1() {
                     mm++;
                 }
 	int last=yer[mm-1];
-                //System.out.println("last"+last);
-                //System.out.println("jj"+jj);
            while(mm<(ss+4))
            {
-               //System.out.print(oo);
               
                last++;
-                yer[mm]=last;
+               yer[mm]=last;
                 
                 System.out.print("  "+yer[mm]);
-                 ++mm;
+                ++mm;
            }
     double x[]=new double[y.length];
     double x2[]=new double[y.length];
     double xy[]=new double[y.length];
     int o=0;
-    int d= y.length%2; // to know if the length is even or odd so that a teensy modification of the algorithm in order to simplify the solving of 2 linesr equations
+    int d= y.length%2; 
    
     if(d==0)//if length is even then set values of x as odd numbers 
     {
@@ -74,10 +76,6 @@ public static void start1() {
     		o=o+2;
     		
     	}
-    	/*for(int i=(0+x.length/2);i<x.length/2;i++)
-    	{
-    		x[i]=o+2;
-    	}*/
     }
     if(d==1)//if length is even then set values of x as continuous numbers
     {
@@ -117,19 +115,16 @@ double a=sy/(y.length);
 double b=cy/s2;
 
 double c[]=new double[x.length+4];
-/*for (int i=0;i<x.length;i++) {
-c[i]=y[i];}*/
-
-//filling of tables go with respect to the length of the initial table therefore the conditions are checked accordingly and filled 
 if(d==1)
-{o=(y.length/2)*-1;
-for (int i=0;i<c.length;i++) {
+{
+    o=(y.length/2)*-1;
+    for (int i=0;i<c.length;i++) 
+    {
 
-c[i]=a+(b*+o);
-o=o+1;
- JOptionPane.showMessageDialog(null, "The trend for "+yer[i]+" is "+c[i], " ", 1);
-//System.out.println(c[i]);
-}
+            c[i]=a+(b*+o);
+            o=o+1;
+            JOptionPane.showMessageDialog(null, "The trend for "+yer[i]+" is "+c[i], " ", 1);
+    }
 }
 
 if(d==0)
